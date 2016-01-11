@@ -1,0 +1,22 @@
+[General]
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local
+bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
+dns-server = 119.29.29.29, 223.5.5.5, 114.114.114.114
+loglevel = notify
+
+[Proxy]
+Proxy = custom,153.92.43.11,11115,aes-128-cfb,Asweknow@1688,http://www.godusevpn.net/download/ss.module
+
+[Rule]
+
+// All blocked site with proxy and remote dns
+// DOMAIN-SUFFIX,,Proxy,force-remote-dns
+
+
+// LAN
+IP-CIDR,10.0.0.0/8,DIRECT
+IP-CIDR,127.0.0.0/8,DIRECT
+IP-CIDR,172.16.0.0/12,DIRECT
+IP-CIDR,192.168.0.0/16,DIRECT
+
+FINAL,Proxy,force-remote-dns
